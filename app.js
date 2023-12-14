@@ -1,5 +1,4 @@
-const fs = require('fs');
-const userData = fs.readFileSync('./data.json');
+
 
 // const total = users.reduce((sum, user) => sum + user.age, 0) / users.length
 // fs.writeFileSync('result.txt', `orta yas - ${total.toFixed(0)}`)
@@ -31,8 +30,8 @@ app.get('/users', (req,res)=>{
    
     res.send(users)
 })
-app.get('/users/id', (req,res)=>{
-    const userId = req.params.id;
+app.get('/users/:id', (req,res)=>{
+    const userId = req.params.users;
     const selectedUser = users.find(user=>user.id == userId)
     // console.log(username); 
     if(selectedUser){
